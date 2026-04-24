@@ -123,7 +123,7 @@ int main() {
                 continue;
             }
             // If not, insert it
-            scopes.top().insert(map<string, Variable>::value_type(name, Variable(type, value)));
+            scopes.top()[name] = Variable(type, value);
         }
         else if (command == "Add" && tokens.size() == 4) {
             string result = tokens[1];
