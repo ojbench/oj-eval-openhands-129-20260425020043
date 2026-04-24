@@ -117,7 +117,11 @@ int main() {
             }
             
             // Add variable to current scope
-            scopes.top().insert(make_pair(name, Variable(type, value)));
+            pair<map<string, Variable>::iterator, bool> ret = scopes.top().insert(pair<string, Variable>(name, Variable(type, value)));
+            if (!ret.second) {
+                cout << "Invalid operation" << endl;
+                continue;
+            }
         }
         else if (command == "Add" && tokens.size() == 4) {
             string result = tokens[1];
