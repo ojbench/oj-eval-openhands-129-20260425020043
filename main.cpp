@@ -117,7 +117,7 @@ int main() {
             }
             
             // Add variable to current scope
-            scopes.top().emplace(name, Variable(type, value));
+            scopes.top().insert(make_pair(name, Variable(type, value)));
         }
         else if (command == "Add" && tokens.size() == 4) {
             string result = tokens[1];
