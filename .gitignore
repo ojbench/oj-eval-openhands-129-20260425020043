@@ -1,0 +1,10 @@
+
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.out
+*.exe
+*.class
+*.pyc
+__pycache__/
+.DS_Store
