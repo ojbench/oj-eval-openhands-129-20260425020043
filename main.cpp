@@ -118,12 +118,12 @@ int main() {
             
             // Add variable to current scope
             // First check if variable already exists in current scope
-            if (scopes.top().find(name) != scopes.top().end()) {
+            if (scopes.top().count(name) > 0) {
                 cout << "Invalid operation" << endl;
                 continue;
             }
             // If not, insert it
-            scopes.top()[name] = Variable(type, value);
+            scopes.top().insert(make_pair(name, Variable(type, value)));
         }
         else if (command == "Add" && tokens.size() == 4) {
             string result = tokens[1];
