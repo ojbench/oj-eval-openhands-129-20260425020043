@@ -162,8 +162,12 @@ int main() {
                 return {false, Variable("", "")};
             };
             
-            auto [found1, var1] = findVariable(val1);
-            auto [found2, var2] = findVariable(val2);
+            auto result1 = findVariable(val1);
+            auto result2 = findVariable(val2);
+            bool found1 = result1.first;
+            Variable var1 = result1.second;
+            bool found2 = result2.first;
+            Variable var2 = result2.second;
             
             if (!found1 || !found2) {
                 cout << "Invalid operation" << endl;
