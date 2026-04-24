@@ -118,7 +118,7 @@ int main() {
             
             // Add variable to current scope
             // First check if variable already exists in current scope
-            if (scopes.top().find(name) != scopes.top().end()) {
+            if (scopes.top().count(name) > 0) {
                 cout << "Invalid operation" << endl;
                 continue;
             }
